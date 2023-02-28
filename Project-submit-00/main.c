@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 20:34:03 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/28 21:19:30 by pvital-m         ###   ########.fr       */
+/*   Created: 2023/02/28 18:47:26 by pvital-m          #+#    #+#             */
+/*   Updated: 2023/02/28 22:01:30 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	clear_terminal(void)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	printf("\033[2J\033[H");
+}
 
-	s = (unsigned char *)s1;
-	d = (unsigned char *)s2;
-	i = 0;
-	while ((s[i] == d[i]) && (s[i] || d[i]) && i < n)
-		i++;
-	return (s[i] - d[i]);
+void	del_func(void *content, size_t content_size)
+{
+	free(content);
+	(void)content_size;
+}
+
+int	main(void)
+{
+	t_list	*node;
+
+	clear_terminal(); 
+	node = ft_lstnew("hello", 6);
+	ft_lstdel(&node, &del_func);
+	if (node == NULL)
+		printf("The node was successfully deleted.\n");
+	else
+		printf("The node was not deleted.\n");
+
+	return (0);
 }

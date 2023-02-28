@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 23:24:24 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/26 23:35:22 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:44:57 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	if (start + len > strlen(s))
+	if ((int)start + (int)len > ft_strlen((char *)s))
 		return (NULL);
 	substring = (char *)malloc(sizeof(char) * (len + 1));
 	if (substring == NULL)
