@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:53:20 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/28 01:39:20 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/04 22:39:45 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,11 @@ char	*ft_strtrim(char const *s)
 		return (NULL);
 	start = 0;
 	end = ft_strlen((char *)s) - 1;
-
 	while (ft_isspace(s[start]))
 		start++;
-
 	while (end > start && ft_isspace(s[end]))
 		end--;
-
 	result = (char *)malloc((end - start + 2) * sizeof(char));
-
 	if (result == NULL)
 		return (NULL);
 	ft_strlcpy(result, s + start, end - start + 2);

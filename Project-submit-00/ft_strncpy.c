@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 11:37:49 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/23 12:44:07 by pvital-m         ###   ########.fr       */
+/*   Created: 2023/03/04 19:44:31 by pvital-m          #+#    #+#             */
+/*   Updated: 2023/03/04 20:32:49 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,18 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t	i;
 
-	i = -1;
-	while (src[++i] && i < len)
+	i = 0;
+	while (src[i] && i < len)
+	{
 		dst[i] = src[i];
-	dst[i] = '\0';
+	}
+	if (i < len && src[i] == '\0')
+	{
+		while (dst[i] != '\0')
+		{
+			dst[i] = '\0';
+			++i;
+		}
+	}
 	return (dst);
 }

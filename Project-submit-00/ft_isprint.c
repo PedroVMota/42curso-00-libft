@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 22:29:09 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/18 23:19:04 by pvital-m         ###   ########.fr       */
+/*   Created: 2023/03/04 19:57:20 by pvital-m          #+#    #+#             */
+/*   Updated: 2023/03/04 19:57:34 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char a)
+int	ft_isprint(int arg)
 {
-	if (a <= 32 || a >= 127)
-		return (0);
-	return (1);
+	if (arg >= ' ' && arg <= '~')
+		return (1);
+	return (0);
 }
