@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:04:46 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 15:52:20 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:55:23 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	while (*s)
-		s++;
-	s -= 1;
-	while (*s)
+	int	len;
+
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
-		if (*s == c)
-			return ((char *)s);
+		if (s[len] == c)
+			return ((char *)&s[len]);
 		s--;
 	}
-	if(!(*s))
-		return ((char *)s);
-	return (NULL);
+	return (0);
 }
