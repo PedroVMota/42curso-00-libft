@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 23:24:24 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 14:54:49 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:44:11 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,27 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*substring;
-	size_t	i;
+	char	*temp;
+	int		i;
 
-	if (s == NULL)
-		return (NULL);
-	if ((int)start + (int)len > ft_strlen((char *)s))
-		return (NULL);
-	substring = (char *)malloc(sizeof(char) * (len + 1));
-	if (substring == NULL)
-		return (NULL);
 	i = 0;
-	while (i < len)
+	if (!s)
+		return (NULL);
+	if ((size_t)start > len)
 	{
-		substring[i] = s[start + i];
-		i++;
+		if ((temp = malloc(1)) == NULL)
+			return (NULL);
+		temp[0] = '\0';
+		return (temp);
 	}
-	substring[len] = '\0';
-	return (substring);
+	if ((temp = ft_calloc((len + 1), sizeof(char))) == NULL)
+		return (NULL);
+	while (start <= (unsigned int)len)
+	{
+		temp[i] = s[start];
+		i++;
+		start++;
+	}
+	return (temp);
+
 }

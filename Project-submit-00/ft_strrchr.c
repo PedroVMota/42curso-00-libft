@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 11:04:46 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 16:07:55 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/05 16:27:28 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	if (*s == c)
-	{
 		return ((char *)s);
-	}
 	return ((char *)last);
 }
