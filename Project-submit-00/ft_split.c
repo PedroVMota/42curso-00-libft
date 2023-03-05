@@ -6,7 +6,7 @@
 /*   By: test <test@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 01:43:07 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 21:16:14 by test             ###   ########.fr       */
+/*   Updated: 2023/03/05 21:19:49 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ char	**ft_split(char const *s, char c)
 	if(!split)
 		printf("THE POINTER IS NULL");
 	split[word_nbr + 1] = 0;
+	
 	return (split);
 }
