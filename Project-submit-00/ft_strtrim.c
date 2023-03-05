@@ -23,23 +23,55 @@
 	If the allocation fails the function returns NULL.
 */
 
-char	*ft_strtrim(char const *s)
+int			ft_getstart(const char *s1, const char *set)
 {
-	size_t	start;
-	size_t	end;
-	char	*result;
+	size_t	len;
+	size_t	i;
 
-	if (s == NULL)
+	len = ft_strlen((char *)s1);
+	i = 0;
+	while (i < len)
+	{
+		if (ft_strchr(set, s1[i]) == 0)
+			break ;
+		i++;
+	}
+	return (i);
+}
+
+int			ft_getend(const char *s1, const char *set)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen((char *)s1);
+	i = 0;
+	while (i < len)
+	{
+		if (ft_strchr(set, s1[len - i - 1]) == 0)
+			break ;
+		i++;
+	}
+	return (len - i);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
+{
+	int		start;
+	int		end;
+	char	*newstr;
+
+	if (s1 == NULL)
 		return (NULL);
-	start = 0;
-	end = ft_strlen((char *)s) - 1;
-	while (s[start] == ' ')
-		start++;
-	while (end > start && s[end] == ' ')
-		end--;
-	result = (char *)malloc((end - start + 2) * sizeof(char));
-	if (result == NULL)
+	if (set == NULL)
+		return (ft_strdup((char *)s1));
+	start = ft_getstart(s1, set);
+	end = ft_getend(s1, set);
+	if (start >= end)
+		return (ft_strdup(""));
+	newstr = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (newstr == NULL)
 		return (NULL);
-	ft_strlcpy(result, s + start, end - start + 2);
-	return (result);
+	ft_strlcpy(newstr, s1 + start, end - start + 1);
+	return (newstr);
 }

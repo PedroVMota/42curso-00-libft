@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+         #
+#    By: test <test@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/05 14:49:36 by pvital-m          #+#    #+#              #
-#    Updated: 2023/03/05 14:59:38 by pvital-m         ###   ########.fr        #
+#    Updated: 2023/03/05 21:02:41 by test             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+#CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
 LIB2	= ranlib
 RM		= /bin/rm -f
@@ -32,7 +32,7 @@ SRCS	= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			
 			
 OBJS	= $(SRCS:.c=.o)
-BONUS_S	= ft_lstnew.c
+BONUS_S	= ft_lstnew.c	ft_lstadd_front.c
 BONUS_O	= $(BONUS_S:.c=.o)
 
 all:		$(NAME)
@@ -46,7 +46,7 @@ bonus:		$(NAME) $(BONUS_O)
 			$(LIB2) $(NAME)
 
 .c.o:
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+			$(CC) -c $< -o $(<:.c=.o)
 
 clean:
 			$(RM) $(OBJS) $(BONUS_O)
