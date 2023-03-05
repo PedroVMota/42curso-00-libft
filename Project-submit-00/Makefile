@@ -46,7 +46,7 @@ bonus:		$(NAME) $(BONUS_O)
 			$(LIB2) $(NAME)
 
 .c.o:
-			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
 			$(RM) $(OBJS) $(BONUS_O)
