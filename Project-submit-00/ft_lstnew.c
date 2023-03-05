@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/04 22:32:56 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/04 22:33:23 by pvital-m         ###   ########.fr       */
+/*   Created: 2023/03/05 15:32:56 by pvital-m          #+#    #+#             */
+/*   Updated: 2023/03/05 15:36:53 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*value;
+	t_list *tab;
 
-	value = (t_list *)malloc(sizeof(t_list));
-	if (!value)
-		return (NULL);
-	value->content = ft_strdup((char *)content);
-	value->content_size = content_size;
-	value->next = NULL;
-	return (value);
+	tab = (t_list *)malloc(sizeof(t_list));
+	tab->content = content;
+	tab->next = NULL;
+	return (tab);
 }

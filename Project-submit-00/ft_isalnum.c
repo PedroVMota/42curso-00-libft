@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 23:30:13 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/26 20:59:59 by pvital-m         ###   ########.fr       */
+/*   Created: 2023/03/05 14:49:52 by pvital-m          #+#    #+#             */
+/*   Updated: 2023/03/05 14:49:55 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0'
-			&& c <= '9'))
-	{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'))
 		return (1);
-	}
 	return (0);
 }
