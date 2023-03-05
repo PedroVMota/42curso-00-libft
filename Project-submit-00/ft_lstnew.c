@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 15:32:56 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 15:36:53 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:41:09 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *tab;
+	t_list	*tab;
 
 	tab = (t_list *)malloc(sizeof(t_list));
 	tab->content = content;
