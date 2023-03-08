@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: test <test@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 00:53:20 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 15:24:54 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/08 00:54:47 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 	If the allocation fails the function returns NULL.
 */
 
-int			ft_getstart(const char *s1, const char *set)
+int	ft_getstart(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -39,7 +39,7 @@ int			ft_getstart(const char *s1, const char *set)
 	return (i);
 }
 
-int			ft_getend(const char *s1, const char *set)
+int	ft_getend(const char *s1, const char *set)
 {
 	size_t	len;
 	size_t	i;
@@ -55,7 +55,7 @@ int			ft_getend(const char *s1, const char *set)
 	return (len - i);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;

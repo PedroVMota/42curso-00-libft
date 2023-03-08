@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: test <test@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/05 15:10:30 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 15:14:13 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/08 05:47:49 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*ss1;
-	unsigned char	*ss2;
-	size_t			i;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
+	size_t				i;
 
 	i = 0;
-	ss1 = (unsigned char *)s1;
-	ss2 = (unsigned char *)s2;
-	while (ss1[i] == ss2[i] && ss1[i] && ss2[i] && i < n)
+	ss1 = (const unsigned char *)s1;
+	ss2 = (const unsigned char *)s2;
+	while (i < n)
+	{
+		if (ss1[i] != ss2[i])
+			return (ss1[i] - ss2[i]);
 		i++;
-	if (ss1[i] == 0 && ss2[i] == 0)
-		return (0);
-	return (1);
+	}
+	return (0);
 }

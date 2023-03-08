@@ -6,7 +6,7 @@
 /*   By: test <test@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 23:45:49 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/05 20:39:53 by test             ###   ########.fr       */
+/*   Updated: 2023/03/08 05:45:13 by test             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int					ft_isalpha(char c);
 int					ft_isascii(int c);
 int					ft_isdigit(char a);
 int					ft_isprint(int arg);
+int					ft_isalnum(int c);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
 char				*ft_itoa(int n);
-void				*ft_memcpy(void *restrict dst, const void *restrict src,
-						size_t n);
+void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_putchar_fd(char c, int fd);
@@ -61,4 +62,12 @@ void				ft_putendl_fd(char *s, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 #endif

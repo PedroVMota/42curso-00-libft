@@ -6,7 +6,7 @@
 #    By: test <test@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/05 14:49:36 by pvital-m          #+#    #+#              #
-#    Updated: 2023/03/05 21:02:41 by test             ###   ########.fr        #
+#    Updated: 2023/03/08 02:27:23 by test             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,11 @@ SRCS	= 	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 			
 			
 OBJS	= $(SRCS:.c=.o)
-BONUS_S	= ft_lstnew.c	ft_lstadd_front.c
+
+BONUS_S	= 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+			ft_lstmap.c
+			
 BONUS_O	= $(BONUS_S:.c=.o)
 
 all:		$(NAME)
