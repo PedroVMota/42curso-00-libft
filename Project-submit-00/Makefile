@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: test <test@student.42.fr>                  +#+  +:+       +#+         #
+#    By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/05 14:49:36 by pvital-m          #+#    #+#              #
-#    Updated: 2023/03/08 02:27:23 by test             ###   ########.fr        #
+#    Updated: 2023/03/08 20:28:33 by pvital-m         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-#CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 LIB1	= ar -rcs
 LIB2	= ranlib
 RM		= /bin/rm -f
@@ -41,7 +41,7 @@ BONUS_O	= $(BONUS_S:.c=.o)
 
 all:		$(NAME)
 
-$(NAME):	$(OBJS) $(INCLUDE)
+$(NAME):	$(OBJS)
 			$(LIB1) $(NAME) $(OBJS)
 			$(LIB2) $(NAME)
 
@@ -49,7 +49,7 @@ bonus:		$(NAME) $(BONUS_O)
 			$(LIB1) $(NAME) $(BONUS_O)
 			$(LIB2) $(NAME)
 
-.c.o:
+%.o : %.c
 			$(CC) -c $< -o $(<:.c=.o)
 
 clean:
@@ -63,3 +63,4 @@ re:			fclean all
 rebonus:	fclean bonus
 
 .PHONY:		all clean fclean re bonus rebonus
+

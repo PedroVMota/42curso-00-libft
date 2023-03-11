@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:03:25 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/23 18:53:23 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 22:59:45 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
+	long long	i;
+	char		*d_dst;
+	char		*s_src;
 
-	if (!dst || !src)
-		return (NULL);
-	if (dst > src)
+	i = 0;
+	d_dst = (char *)dst;
+	s_src = (char *)src;
+	if (d_dst == s_src)
+		return (dst);
+	if (d_dst > s_src)
 	{
-		i = (int)len - 1;
-		while (i >= 0)
-		{
-			*(char *)(dst + i) = *(char *)(src + i);
-			i--;
-		}
+		while (len--)
+			d_dst[len] = s_src[len];
 	}
 	else
 	{
-		i = 0;
-		while (i < (int)len)
+		while (i < len)
 		{
-			*(char *)(dst + i) = *(char *)(src + i);
+			d_dst[i] = s_src[i];
 			i++;
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 02:11:25 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/28 02:23:48 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/08 20:40:26 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	long	nbr;
 
 	nbr = n;
-	str = malloc(sizeof(char) * (ft_len(nbr) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_len(nbr) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;

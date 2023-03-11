@@ -6,15 +6,15 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:09:50 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/18 23:12:42 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:00:02 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_toupper(char c)
+int	ft_toupper(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c > 96 && c < 123)
 		c -= 32;
 	return (c);
 }

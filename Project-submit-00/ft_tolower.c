@@ -6,13 +6,13 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 22:09:50 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/18 23:11:00 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:00:49 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

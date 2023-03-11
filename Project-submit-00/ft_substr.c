@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: test <test@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 23:24:24 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/03/08 05:44:56 by test             ###   ########.fr       */
+/*   Updated: 2023/03/09 12:07:39 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,49 @@
 **	If the allocation fails, the function returns NULL.
 */
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_custom_len(char const *s, unsigned int start, unsigned long int len)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	unsigned long int	i;
 
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	s += start;
+	while (*s++ && i < len)
+		i++;
+	return (i);
+}
+
+char	*ft_error_return(void)
+{
+	char	*error_res;
+
+	error_res = (char *)malloc((sizeof(char) * 1));
+	if (!error_res)
+		return (0);
+	error_res[0] = '\0';
+	return (error_res);
+}
+
+char	*ft_substr(char const *s, unsigned int start, int len)
+{
+	unsigned long int	i;
+	unsigned long int	l_len;
+	int					alocation_size;
+	char				*substr;
+
+	i = 0;
+	l_len = (unsigned long int)len;
+	if (start > (unsigned int)ft_strlen(s))
+		return (ft_error_return());
+	alocation_size = ft_custom_len(s, start, l_len);
+	substr = (char *)malloc((sizeof(char) * alocation_size) + 1);
+	if (!substr)
+		return (0);
+	s += start;
+	while (*s && i < l_len)
 	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
+		substr[i] = *s++;
 		i++;
 	}
-	str[j] = 0;
-	return (str);
+	substr[i] = '\0';
+	return (substr);
 }

@@ -6,13 +6,13 @@
 /*   By: pvital-m <pvital-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 23:35:45 by pvital-m          #+#    #+#             */
-/*   Updated: 2023/02/19 17:47:58 by pvital-m         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:38:22 by pvital-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char a)
+int	ft_isdigit(int a)
 {
 	if (a >= '0' && a <= '9')
 		return (1);
